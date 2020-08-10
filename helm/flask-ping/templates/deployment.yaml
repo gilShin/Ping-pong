@@ -4,6 +4,9 @@ metadata:
   name: {{ .Values.name }}
   namespace: {{ .Values.namespace }}
 spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.service.labels.app }}
   replicas: {{ .Values.replicas }}
   minReadySeconds: {{ .Values.minReadySeconds }}
   strategy:
